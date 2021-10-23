@@ -1,145 +1,129 @@
-# Blueprint/Boilerplate For Python Projects
+# AI Noise Reduction 
 
-[![Build, Test and Lint Action](https://github.com/MartinHeinz/python-project-blueprint/workflows/Build,%20Test,%20Lint/badge.svg)](https://github.com/MartinHeinz/python-project-blueprint/workflows/Build,%20Test,%20Lint/badge.svg)
-[![Push Action](https://github.com/MartinHeinz/python-project-blueprint/workflows/Push/badge.svg)](https://github.com/https://github.com/MartinHeinz/python-project-blueprint/workflows/Push/badge.svg)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/05c44c881bc10a706cbc/test_coverage)](https://codeclimate.com/github/MartinHeinz/python-project-blueprint/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/05c44c881bc10a706cbc/maintainability)](https://codeclimate.com/github/MartinHeinz/python-project-blueprint/maintainability)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MartinHeinz_python-project-blueprint&metric=alert_status)](https://sonarcloud.io/dashboard?id=MartinHeinz_python-project-blueprint)
-
-## Blog Posts - More Information About This Repo
-
-You can find more information about this project/repository and how to use it in following blog post:
-
-- [Ultimate Setup for Your Next Python Project](https://towardsdatascience.com/ultimate-setup-for-your-next-python-project-179bda8a7c2c)
-- [Automating Every Aspect of Your Python Project](https://towardsdatascience.com/automating-every-aspect-of-your-python-project-6517336af9da)
-- [Deploy Any Python Project to Kubernetes](https://towardsdatascience.com/deploy-any-python-project-to-kubernetes-2c6ad4d41f14)
-- [Implementing gRPC server using Python](https://towardsdatascience.com/implementing-grpc-server-using-python-9dc42e8daea0)
-
-## Quick Start
-To use this repository as starter for your project you can run `configure_project.sh` script, which sets up all variables and file names. This way you can avoid configuring and renaming things yourself:
-
-```shell
-./configure_project.sh MODULE="coolproject" REGISTRY="docker.pkg.github.com/martinheinz/repo-name"
-```
-
-## Running
-
-### Using Python Interpreter
-```shell
-~ $ make run
-```
-
-### Using Docker
-
-Development image:
-```console
-~ $ make build-dev
-~ $ docker images --filter "label=name=blueprint"
-REPOSITORY                                                             TAG                 IMAGE ID            CREATED             SIZE
-docker.pkg.github.com/martinheinz/python-project-blueprint/blueprint   3492a40-dirty       acf8d09acce4        28 seconds ago      967MB
-~ $ docker run acf8d09acce4
-Hello World...
-```
-
-Production (Distroless) image:
-```console
-~ $ make build-prod VERSION=0.0.5
-~ $ docker images --filter "label=version=0.0.5"
-REPOSITORY                                                             TAG                 IMAGE ID            CREATED             SIZE
-docker.pkg.github.com/martinheinz/python-project-blueprint/blueprint   0.0.5               65e6690d9edd        5 seconds ago       86.1MB
-~ $ docker run 65e6690d9edd
-Hello World...
-```
-
-## Testing
-
-Test are ran every time you build _dev_ or _prod_ image. You can also run tests using:
-
-```console
-~ $ make test
-```
-
-## Pushing to GitHub Package Registry
-
-```console
-~ $ docker login docker.pkg.github.com --username MartinHeinz
-Password: ...
-...
-Login Succeeded
-~ $ make push VERSION=0.0.5
-```
-
-## Cleaning
-
-Clean _Pytest_ and coverage cache/files:
-
-```console
-~ $ make clean
-```
-
-Clean _Docker_ images:
-
-```console
-~ $ make docker-clean
-```
-
-## Kubernetes
-
-Application can be easily deployed on _k8s_ using _KinD_.
-
-To create cluster and/or view status:
-
-```console
-~ $ make cluster
-```
-
-To deploy application to local cluster:
-
-```console
-~ $ make deploy-local
-```
-
-To get debugging information of running application:
-
-```console
-~ $ make cluster-debug
-```
-
-To get remote shell into application pod:
-
-```console
-~ $ make cluster-rsh
-```
-
-To apply/update _Kubernetes_ manifest stored in `k8s` directory:
-
-```console
-~ $ make manifest-update
-```
-
-## Setting Up Sonar Cloud
-- Navigate to <https://sonarcloud.io/projects>
-- Click _plus_ in top right corner -> analyze new project
-- Setup with _other CI tool_ -> _other_ -> _Linux_
-- Copy `-Dsonar.projectKey=` and `-Dsonar.organization=`
-    - These 2 values go to `sonar-project.properties` file
-- Click pencil at bottom of `sonar-scanner` command
-- Generate token and save it
-- Go to repo -> _Settings_ tab -> _Secrets_ -> _Add a new secret_
-    - name: `SONAR_TOKEN`
-    - value: _Previously copied token_
+<p align="center">
     
-## Creating Secret Tokens
-Token is needed for example for _GitHub Package Registry_. To create one:
+![image](https://user-images.githubusercontent.com/84375995/138570711-b802d8e7-f4c7-43aa-8f8f-da77cbbcd01d.png)
 
-- Go to _Settings_ tab
-- Click _Secrets_
-- Click _Add a new secret_
-    - _Name_: _name that will be accessible in GitHub Actions as `secrets.NAME`_
-    - _Value_: _value_
 
-### Resources
-- <https://realpython.com/python-application-layouts/>
-- <https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6>
-- <https://github.com/navdeep-G/samplemod/blob/master/setup.py>
-- <https://github.com/GoogleContainerTools/distroless/blob/master/examples/python3/Dockerfile>
+</p>  
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Tech Stack](#tech-stack)
+  * [File Structure](#file-structure)
+* [Getting Started](#getting-started)
+* [Results and Demo](#results-and-demo)
+* [Future Work](#future-work)
+* [Contributors](#contributors)
+* [Acknowledgements and Resources](#acknowledgements-and-resources)
+* [License](#license)
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+### Real time noise cancellation of the noise inthe Audio data signal .
+*  The noise needed to be removed  which is naturally induced like the non environmental noise  which is removed with the denoising the signal  .
+Refer this [documentation](https://github.com/Dhriti03/ai-noise-reduction/blob/master/AI%20Noise%20Reduction.pdf)
+also this [Blog on AI noise reduction](https://github.com/Dhriti03/ai-noise-reduction/blob/master/Blog.pdf)
+
+<hr>
+
+### Tech Stack
+
+* The [Librosa](https://github.com/librosa/librosa) Library for Audio manupulation is used.
+* For the Audio signals we used [scipy](https://github.com/scipy/scipy) 
+* [Matplotlib](https://github.com/matplotlib/matplotlib) used to manipulate the data and visualize the signal .
+<!-- This section should list the technologies you used for this project. Leave any add-ons/plugins for the prerequisite section. Here are a few examples. -->
+
+The rest is Numpy  for mathematical operations , wave for the operating on the wave file .
+
+### File Structure
+
+```
+AI Noise Reduction 
+├───docs                                                                       ## Documents and Images
+│   └───Input Audio file
+├───
+Project Details 
+│   |
+│   ├───
+│   │   ├───Research papers
+│   │   ├───Linear Algebra 
+│   │   ├───Neural networks & Deep Learning 
+│   │   ├───Project Documentation
+│   │   ├───AI Noise Reduction Blog
+│   │   ├───AI Noise Reduction Report
+│   │   └───Code Implementation
+│   │       ├───AI Noise Reduction.py
+│   │       ├───audio.wav
+│   │       ├───Resources
+```
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites & Installation
+
+* Tested on Windows
+
+```sh
+git clone https://github.com/Dhriti03/ai-noise-reduction.git
+cd ai-noise-reduction
+```
+
+In your Notebook install certain libraries 
+
+```cmd
+pip install wave 
+pip install librosa
+pip install scipy.io
+pip install matplotlib.pyplot
+
+```
+
+<!-- RESULTS AND DEMO -->
+## Results and Demo
+*This is the original Audio File 
+*![Original Audio file](https://user-images.githubusercontent.com/84375995/138569872-c4ef96a8-6d48-4f10-8ee7-c286de0a9c53.png)
+*After Addition of the Noise 
+*![Noise added to the signal](https://user-images.githubusercontent.com/84375995/138569964-aa06b69d-2b2b-4e92-af79-a8d265c120c7.png)
+*The final Audio signal after removing noise 
+*![The final Audio signal after removing noise ](https://user-images.githubusercontent.com/84375995/138569936-da5a10d8-1d3a-46c5-9c4d-aae682b1a583.png)
+
+
+* On Manipulating the code according to your requirements, you could use it to control most of the Audio signlas .
+
+
+
+
+<!-- FUTURE WORK -->
+## Future Work
+
+- [x] Applying the Noise reduction algorithum for the already downloaded wav file. 
+- [x] Applying the FFT over the live recording of the audio signal .
+- [ ] Further more deep implementation of the AI for the Noise cancellation.
+- [ ] Applying the Noise reduction Algorithum for various formats of Audio files .
+- [ ] The live audio signal with the microphone and Esp32 and thus will get the wav file for the further computation and signal processing .
+
+<!-- CONTRIBUTORS -->
+## Contributors
+
+* [Dhriti Mabian](https://github.com/Dhriti03)
+* [Priyal Awankar](https://github.com/Pixels123priyal)
+
+
+<!-- ACKNOWLEDGEMENTS AND REFERENCES -->
+## Acknowledgements and Resources
+
+* [SRA VJTI](http://sra.vjti.info/) Eklavya 2021
+* [Audacity](https://github.com/audacity/audacity/blob/master/src/effects) 
+*[Noise Cancellation Method for Robust Speech 
+Recognition](https://research.ijcaonline.org/volume45/number11/pxc3879438.pdf) 
+
+<!-- LICENSE -->
+## License
+
+[License](LICENSE)
