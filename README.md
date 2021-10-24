@@ -517,7 +517,7 @@ if verbose:
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements 
 
-*[SRA VJTI_Eklavya 2021](http://sra.vjti.info/) 
+*[SRA VJTI_Eklavya 2021](https://sravjti.in/) 
 
 # Mentors 
 * [Shreyas Atre ](https://github.com/SAtacker)
