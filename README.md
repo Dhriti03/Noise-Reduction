@@ -515,12 +515,19 @@ if verbose:
 
 
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
-## Acknowledgements and Resources
+## Acknowledgements 
 
-* [SRA VJTI](http://sra.vjti.info/) Eklavya 2021
+*[SRA VJTI_Eklavya 2021](http://sra.vjti.info/) 
+
+# Mentors 
+* [Shreyas Atre ](https://github.com/SAtacker)
+* [Harsh Shah ](https://github.com/HarshShah03325)
+
+ ## Resources
 * [Audacity](https://github.com/audacity/audacity/blob/master/src/effects) 
-*[Noise Cancellation Method for Robust Speech 
-Recognition](https://research.ijcaonline.org/volume45/number11/pxc3879438.pdf) 
+
+* [Noise Cancellation Method](https://research.ijcaonline.org/volume45/number11/pxc3879438.pdf) 
+
 
 <!-- LICENSE -->
 ## License
