@@ -165,21 +165,6 @@ def band_limited_noise(min_freq, max_freq, samples=1024, samplerate=1):
 1. A function or time series whose Fourier transform is restricted to a finite range of frequencies or wavelengths.
 2. defining the freq with the standard freq with the min and max limit.
 
-~~~python
-IPython.display.Audio(data=data, rate=rate)
-~~~
-
-1. Create an audio object.
-2. When this object is returned by an input cell or passed to the display function, it will result in Audio controls being displayed in the frontend.
-
-~~~python
-ploting the given data 
-fig, ax = plt.subplots(figsize=(20,4))
-ax.plot(data)
-~~~
-    
-1. Here we plot the frequency curve wrt the information on the x axis and the data of noise provided.
-2. **plt.subplots()** is a function that returns a tuple containing a figure and axes object(s). Thus when using fig, **ax = plt.subplots()** you unpack this tuple into the variables fig and ax. Having fig is useful if you want to change figure-level attributes or save the figure as an image file later.
 
 ~~~python
 noise_len = 2 # seconds
@@ -199,13 +184,6 @@ audio_clip_band_limited = data+noise
 7. Adding noise means that the network is less able to memorize training samples because they are changing all of the time,
 8. resulting in smaller network weights and a more robust network that has lower generalization error.
 
-~~~python 
-fig, ax = plt.subplots(figsize=(20,4))
-ax.plot(audio_clip_band_limited)
-IPython.display.Audio(data=audio_clip_band_limited, rate=rate)
-~~~
-1. Here we are plotting that  graph of the audio signal which is clipped the data with the noise being added .
-2. Then display that audion signal with **IPython.display.Audio**.
 
 ~~~python 
 import time
@@ -284,8 +262,6 @@ def plot_spectrogram(signal, title):
 ~~~python
 fig.colorbar(cax)
     ax.set_title(title)
-    plt.tight_layout()
-    plt.show()
 ~~~
 1. The best way to see what's happening, is to add a colorbar (plt.colorbar(), after creating the scatter plot). You'll note that your out values between 0 and 10000 are all below the lowest part of the bar, where things are a very light green.
 
@@ -309,7 +285,7 @@ def plot_statistics_and_filter(
     fig.colorbar(cax)
     ax[1].set_title("Filter for smoothing Mask") 
                                                 
-    plt.show()
+    
 ~~~
 1.  Plots basic statistics of noise reduction.
 2. Signal-to-noise ratio (SNR or S/N) is a measure used in science and engineering that compares the level of a desired signal to the level of background noise. 
@@ -362,13 +338,8 @@ To what extent should you decrease noise (1 = all, 0 = none)
  flag allows you to write regular expressions that look presentable
 **visual=False,**      #Whether to plot the steps of the algorithm
 ):
-~~~python
-if verbose:
-        start = time.time() 
-~~~
-1. Time module in Python provides various time-related functions. This module comes under Python’s standard utility modules.
 
-    **time.time()** method of Time module is used to get the time in seconds since epoch. The handling of leap seconds is platform dependent.
+   
 ~~~python
 
     noise_stft = _stft(noise_clip, n_fft, hop_length, win_length)
@@ -382,28 +353,23 @@ if verbose:
     mean_freq_noise = np.mean(noise_stft_db, axis=1)
     std_freq_noise = np.std(noise_stft_db, axis=1)
     noise_thresh = mean_freq_noise + std_freq_noise * n_std_thresh
-    if verbose:
-        print("STFT on noise:", td(seconds=time.time() - start))
-        start = time.time()
+    
 ~~~
 1. Calculate statistics over noise
 2. Here we for the thresh noise we add the mean and the standard noise and the n_std noise .
 
 ~~~python
 
-    if verbose:
-        start = time.time()
+   
     sig_stft = _stft(audio_clip, n_fft, hop_length, win_length)
     sig_stft_db = _amp_to_db(np.abs(sig_stft))
-    if verbose:
-        print("STFT on signal:", td(seconds=time.time() - start))
-        start = time.time()
+    
 ~~~
 1. STFT over signal
 ~~~python
 
     mask_gain_dB = np.min(_amp_to_db(np.abs(sig_stft)))
-    print(noise_thresh, mask_gain_dB)
+    
 ~~~
 1.  Calculate value to mask dB to
 
@@ -439,19 +405,15 @@ if verbose:
 ~~~python 
 
     sig_mask = sig_stft_db < db_thresh
-    if verbose:
-        print("Masking:", td(seconds=time.time() - start))
-        start = time.time()
+    
  ~~~
+ 1. mask for the signal
  ~~~python    
     sig_mask = scipy.signal.fftconvolve(sig_mask, smoothing_filter, mode="same")
     sig_mask = sig_mask * prop_decrease
 ~~~
-~~~python     
-    if verbose:
-        print("Mask convolution:", td(seconds=time.time() - start))
-        start = time.time()
-~~~   
+1. Mask Convolution with Smoothning filter
+  
 ~~~python     
     # mask the signal
     sig_stft_db_masked = (
@@ -462,41 +424,21 @@ if verbose:
     sig_stft_amp = (_db_to_amp(sig_stft_db_masked) * np.sign(sig_stft)) + (
         1j * sig_imag_masked
     )
-    if verbose:
-        print("Mask application:", td(seconds=time.time() - start))
-        start = time.time()
 ~~~  
+1. Mask the signal 
 ~~~python      
     # recover the signal
     recovered_signal = _istft(sig_stft_amp, hop_length, win_length)
     recovered_spec = _amp_to_db(
         np.abs(_stft(recovered_signal, n_fft, hop_length, win_length))
     )
-    if verbose:
-        print("Signal recovery:", td(seconds=time.time() - start))        
-    if visual:
-        plot_spectrogram(noise_stft_db, title="Noise")
-    if visual:
-        plot_statistics_and_filter(
-            mean_freq_noise, std_freq_noise, noise_thresh, smoothing_filter
-        )
+   
 ~~~
-~~~python        
-    if visual:
-        plot_spectrogram(sig_stft_db, title="Signal")
-    if visual:
-        plot_spectrogram(sig_mask, title="Mask applied")
-    if visual:
-        plot_spectrogram(sig_stft_db_masked, title="Masked signal")
-    if visual:
-        plot_spectrogram(recovered_spec, title="Recovered spectrogram")
-    return recovered_signal
-
-~~~
-1.  mask if the signal is above the threshold
+1. recover the signal
+1.  Thus apply mask if the signal is above the threshold
 2. convolve the mask with a smoothing filter
 
-# Thus the Noise reduction in python  is complete .
+
 
 <!-- FUTURE WORK -->
 ## Future Work
