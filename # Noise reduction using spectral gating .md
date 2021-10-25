@@ -397,7 +397,7 @@ if verbose:
 1.  mask if the signal is above the threshold
 2. convolve the mask with a smoothing filter
 
-# Thus the Noise reduction in python  is complete .S
+# Thus the Noise reduction in python  is complete .
 
 
 
