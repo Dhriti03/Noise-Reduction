@@ -86,6 +86,9 @@ pip install matplotlib.pyplot
 
 <!-- RESULTS AND DEMO -->
 ## Results and Demo
+## Video clip of the project .
+[![image](https://user-images.githubusercontent.com/84375995/138935212-453b9ace-65b0-4222-b0da-63e4c51dc2e1.png)](https://www.youtube.com/watch?v=9dDNMoTWkTw)
+
 *This is the original Audio File 
 *![Original Audio file](https://user-images.githubusercontent.com/84375995/138569872-c4ef96a8-6d48-4f10-8ee7-c286de0a9c53.png)
 *After Addition of the Noise 
