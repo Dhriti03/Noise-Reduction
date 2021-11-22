@@ -62,9 +62,9 @@ Project Details
 │   │       ├───Resources
 ```
 
-![image](//home//dhriti//imp.png) 
 
 # When some annoying noise springs up and you have put on your headphones
+![image](https://github.com/Dhriti03/ai-noise-reduction/blob/dev/imp.png)
 ### That are cheap and don't offer Active Noise Cancellation , how do you feel ?
 
 Definitely unpleasant. And the problem
@@ -100,6 +100,7 @@ better fidelity or just enjoy some peace and quiet.
 I know you are wondering that the name of Article AI Noise Cancellation ,then where is
 AI .
 
+![image](https://github.com/Dhriti03/ai-noise-reduction/blob/dev/download%20(1).jpeg) 
 
 ## AI-Powered Noise Removal
 A fairly new development is the application of artificial intelligence technology to
@@ -134,7 +135,7 @@ of these symmetries in computing the Fourier coefficients.
 coefficient z1. 
 5. Going by the formula in the previous section, this would require
 computing.
-
+![noise](https://github.com/Dhriti03/ai-noise-reduction/blob/dev/img3.png)
 
  ## Now ,the key function of the project (subtract/reduce noise):
 ### Algorithm to separate / subtract / reduce noise
@@ -564,6 +565,7 @@ Now,the AI Noise reduction algorithm is ready to be
 implemented with the coding practice.Enjoy the uninterrupted conversations
 calmly.
 
+![image](https://github.com/Dhriti03/ai-noise-reduction/blob/dev/img4.png)
 <!-- FUTURE WORK -->
 ## Future Work
 
