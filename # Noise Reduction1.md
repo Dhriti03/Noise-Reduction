@@ -594,7 +594,6 @@ calmly.
  ## Resources
 * [Audacity](https://github.com/audacity/audacity/blob/master/src/effects) 
 
-* [Noise Cancellation Method](https://research.ijcaonline.org/volume45/number11/pxc3879438.pdf) 
 
 
 <!-- LICENSE -->
