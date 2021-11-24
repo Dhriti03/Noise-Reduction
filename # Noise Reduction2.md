@@ -212,7 +212,7 @@ pip install matplotlib.pyplot
 *The final Audio signal after removing noise 
 *![The final Audio signal after removing noise ](https://user-images.githubusercontent.com/84375995/138569936-da5a10d8-1d3a-46c5-9c4d-aae682b1a583.png)
 *Flowchart for the project 
-*![image](https://user-images.githubusercontent.com/84375995/138572706-75550c5c-0a1a-4b2c-9f4e-205a7ecc42b5.png)
+*![image](https://github.com/Dhriti03/ai-noise-reduction/blob/dev/downcccccload.png)
 
 * On Manipulating the code according to your requirements, you could use it to control most of the Audio signlas .
 ##Theory 
