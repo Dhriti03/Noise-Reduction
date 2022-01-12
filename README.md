@@ -1,4 +1,4 @@
-# AI Noise Reduction 
+# Noise Reduction 
 
 <p align="center">
     
