@@ -43,7 +43,7 @@ The rest is Numpy  for mathematical operations , wave for the operating on the w
 ### File Structure
 
 ```
-AI Noise Reduction 
+Noise Reduction 
 ├───docs                                                                       ## Documents and Images
 │   └───Input Audio file
 ├───
@@ -70,8 +70,8 @@ Project Details
 * Tested on Windows
 
 ```sh
-git clone https://github.com/Dhriti03/ai-noise-reduction.git
-cd ai-noise-reduction
+git clone https://github.com/Dhriti03/Noise-Reduction.git
+cd Noise-Reduction
 ```
 
 In your Notebook install certain libraries 
