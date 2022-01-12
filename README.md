@@ -471,7 +471,7 @@ To what extent should you decrease noise (1 = all, 0 = none)
 * [Audacity](https://github.com/audacity/audacity/blob/master/src/effects) 
 
 * [Noise Cancellation Method](https://research.ijcaonline.org/volume45/number11/pxc3879438.pdf) 
-
+* [Took the boilerplate from Martin Heinz](https://github.com/MartinHeinz) 
 
 <!-- LICENSE -->
 ## License
