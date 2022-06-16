@@ -472,7 +472,7 @@ To what extent should you decrease noise (1 = all, 0 = none)
 
 * [Noise Cancellation Method](https://research.ijcaonline.org/volume45/number11/pxc3879438.pdf) 
 * [Took the boilerplate from Martin Heinz](https://github.com/MartinHeinz) 
-
+* [Tim Sainburg ](https://timsainburg.com/) 
 <!-- LICENSE -->
 ## License
 
